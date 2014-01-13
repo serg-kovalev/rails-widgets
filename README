@@ -1,17 +1,4 @@
-Rails Widgets
+Widgets
 =======
 
-Rails Widgets is a collection of UI Widgets for RubyOnRails (in form of ActionView helpers).
-You can add tabbed navigations, progressbars, rounded boxes etc in a snap.
-All the widgets generate and inline their own CSS. Once your page is up and running you can extract and customize them as you wish.
-
-Originally it works as a plugin. Now it could be installed as a plugin OR added to your project as a gem. Enjoy!
-
-If you use this as a gem - don't forget to require widgets in application
-	$ require 'widgets'
-
-Forked from:
-  git://github.com/paolodona/rails-widgets.git
-
-Original Documentation: 
-  http://github.com/paolodona/rails-widgets/wikis
+Description goes here

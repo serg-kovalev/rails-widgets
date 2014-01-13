@@ -2,9 +2,10 @@ module Widgets
   class Tab
     include Highlightable
     include Disableable
-    attr_accessor :link, :remote_link, :name, :html
+    attr_accessor :link, :remote_link, :name, :html, :button
     
     def initialize(opts={})
+      @button=opts[:button]
       @name = opts[:name] 
       @link = opts[:link] || {}
       @remote_link = opts[:remote_link] || nil
@@ -20,6 +21,7 @@ module Widgets
       
       self.highlights << @link if link? # it does highlight on itself
       raise ArgumentError, 'you must provide a name' unless @name
+
     end
     
     # title is a shortcut to html[:title]
@@ -34,7 +36,12 @@ module Widgets
       #if not given I'll generate a random one
       @html[:id] ||= "tab_#{rand(99999)}"
     end
-    def named(n); @name = n; end
+    def button_to(b)
+      @button=b
+    end
+    def named(n); 
+      @name = n; 
+    end
     def titled(t); @html[:title] = t; end
     
     def link?

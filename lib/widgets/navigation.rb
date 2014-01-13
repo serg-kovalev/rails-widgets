@@ -10,7 +10,7 @@ module Widgets
       @html = opts[:html] || {} # setup default html options
       @html[:id] ||= "#{@name}_navigation"
       @html[:class] ||= @html[:id]
-      @separator = opts[:separator] ||= '&nbsp;|'
+      @separator = opts[:separator] ||= '&nbsp;|'.html_safe
     end
     
     def add_item opts={}

@@ -18,7 +18,7 @@ module Widgets
       result << render_tooltip(name, tooltip_content(opts,&proc), opts)
       
       if block_given?
-        concat result
+        concat result, proc.binding; 
         return nil
       else
         return result
@@ -28,7 +28,7 @@ module Widgets
     def tooltip_css
       unless @_tooltip_css_done
         @_tooltip_css_done = true
-        return render_css('tooltip')
+        return default_css
       else
         ''
       end
@@ -60,5 +60,11 @@ module Widgets
       html << '</div></div>' 
       html
     end
+    
+    # return the name of the erb to parse for the default css generation
+    def css_template_filename
+      'tooltip.css.erb' 
+    end
+    
   end
 end
